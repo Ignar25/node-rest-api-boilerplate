@@ -1,33 +1,127 @@
-swagger: "2.0"
+swagger: '2.0'
 info:
-  version: "1.0.0"
-  title: "node-rest-api-boilerplate"
-  description: "API REST created with Node.js and Express."
-host: localhost
+  version: '1.0.0'
+  title: 'Users API REST'
+  description: 'API REST used for testing purposes'
+host: "2eja2nqth0.execute-api.us-east-1.amazonaws.com"
 basePath: "/api"
-schemes:
-  - https
-  - http
-consumes:
-  - application/json
-produces:
-  - application/json
-paths:
-  /hello-world:
-    get:
-      tags:
-        - Example
-      summary: "Endpoint used how to example"
-      description: Update this spec with the correct information required.
-      responses:
-        200:
-          $ref: "#/responses/success"
-responses:
-  success:
-    description: OK
-    schema:
-      $ref: '#/definitions/Greeting'
-definitions:
-  Greeting:
-    type: string
-    example: "Hello World"
+schemes: ["https"]
+paths: {
+  "/user": {
+      "get": {
+        "tags": ["Endpoints"],
+        "description": "It gives all the users",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "users": {
+                  "type": "array",
+                  "items": {
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                      },
+                      "name": {
+                        "type": "string",
+                      },
+                      "lastname": {
+                        "type": "string",
+                      },
+                      "birthday": {
+                        "type": "string",
+                        "format": "date",
+                      },
+                      "is_active": {
+                        "type": "boolean",
+                      },
+                      "email": {
+                        "type": "string",
+                      },
+                      "genre": {
+                        "type": "string",
+                      },
+                    }
+                  }
+                },
+                "age": {
+                  "type": "integer",
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                },
+                "severity": {
+                  "type": "string",
+                },
+                "message": {
+                  "type": "string",
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                },
+                "severity": {
+                  "type": "string",
+                },
+                "message": {
+                  "type": "string",
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                },
+                "severity": {
+                  "type": "string",
+                },
+                "message": {
+                  "type": "string",
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string"
+                },
+                "severity": {
+                  "type": "string"
+                },
+                "message": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+}
