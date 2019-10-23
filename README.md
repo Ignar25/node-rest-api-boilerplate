@@ -24,3 +24,9 @@ And to run it you can do it in DEV or the usual way
  - NodeJS
  - Express
 ```
+
+
+## Corner of shame:
+ Couldn't do:
+  - Sort the object
+  - Spreading the age into the user object, it's out of the object
