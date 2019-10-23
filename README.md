@@ -6,7 +6,7 @@
 
 For you to start it, you need to install the dependencies.
 ```
-npm instal
+npm install or npm i
 ```
 And to run it you can do it in DEV or the usual way
  - Dev
