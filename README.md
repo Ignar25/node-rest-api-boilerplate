@@ -18,3 +18,9 @@ And to run it you can do it in DEV or the usual way
  npm start
  ```
 
+## Requirements
+
+```
+ - NodeJS
+ - Express
+```
