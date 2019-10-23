@@ -13,7 +13,7 @@ And to run it you can do it in DEV or the usual way
  ```
  npm run dev
  ```
- -Usual wat
+ - Usual way
  ```
  npm start
  ```
